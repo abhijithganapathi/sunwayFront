@@ -1,0 +1,59 @@
+.hero {
+    background: url('../../assets/pexels-los-muertos-crew-8853509.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 500px;
+    
+}
+
+element.style{
+    justify-content: center!important;
+}
+
+.String{
+    display: block!important;
+}
+
+.alltext{
+    padding-top: 150px;
+}
+
+.hero .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    max-width: 1240px;
+    margin: auto;
+    padding: 1rem;
+    padding-top: 20px;
+}
+.btn-primary{
+    background-color: #FC5130!important;
+    border-color: #FC5130!important;
+}
+.btn-primary:hover{
+    background-color: #c5482f!important;
+    border-color: #FC5130!important;
+}
+.color{
+    color: #FC5130;
+}
+.box{
+    background-color: #FC5130;
+    width: 315px;
+    align-items: center;
+}
+
+h1{
+    font-family: poppins;
+    font-size: 80px;
+    margin: 0;
+    line-height: 0;
+}
+
+
+
+
+
+
+
+

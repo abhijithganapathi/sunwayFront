@@ -1,0 +1,46 @@
+.start-step-card, .start-step-card-header, .start-step-card-body, .start-step-card-footer{
+    text-align: center !important;
+    background-color: transparent !important;
+}
+
+.containerx{
+  justify-content: center;
+  margin: auto;
+}
+
+.start-step-h4{
+    color: #ffffff !important;
+    font-weight: bold !important;
+    
+}
+
+.third-color-span {
+    color: #9d9e9f;
+  }
+  
+.p-font {
+    font-size: 1.1rem !important;
+  }
+
+.start-step-card-footer{
+    margin-top: -25px !important;
+}
+
+
+.start-step-card-row{
+    padding-left: 100px;
+    padding-right:100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #202020;
+}
+
+.start-step-h4{
+    align-items: center    ;
+}
+
+@media screen and (max-width:578px){
+  .start-step-col {
+    margin-bottom: 50px;
+  }
+}

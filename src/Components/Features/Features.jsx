@@ -1,4 +1,5 @@
 import "./Features.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Features() {
   return (
@@ -10,10 +11,11 @@ function Features() {
               <img
                 className="mb-3"
                 style={{ height: "100px" }}
-                src="src\assets\solution.png"
+                src="/static/images/solution.png"
               />
               <h4 className="start-step-h4">Customized solutions</h4>
               <p className="text-white">
+              <FontAwesomeIcon icon="fa-solid fa-gear" />
                 We design and install solar systems that are tailored to your
                 specific needs and preferences. We take into account your roof
                 size, orientation, shading, load profile, and aesthetic
@@ -26,7 +28,7 @@ function Features() {
               <img
                 className="mb-3"
                 style={{ height: "100px" }}
-                src="src\assets\expert.png"
+                src="/static/images/expert.png"
               />
               <h4 className="start-step-h4">Expert guidance</h4>
               <p className="text-white">
@@ -42,7 +44,7 @@ function Features() {
               <img
                 className="mb-3"
                 style={{ height: "100px" }}
-                src="src\assets\quality.png"
+                src="/static/images/quality.png"
               />
               <h4 className="start-step-h4">Quality assurance</h4>
               <p className="text-white">

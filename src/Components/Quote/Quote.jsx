@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import "./Quote.css";
 import toast, { Toaster } from "react-hot-toast";
+import { useEffect } from "react";
 
 function Quote() {
   const [show, setShow] = useState(false);
@@ -17,31 +18,61 @@ function Quote() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleShow();
+    }, 5000); // 5000ms = 5s
+
+    // Clean up function
+    return () => clearTimeout(timer);
+  }, []); // Empty dependency array means this effect runs once on mount
+
+
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    try {
-      // use the same URL as your server.js file
-      console.log(import.meta.env.VITE_SERVER_URL);
-      const result = await fetch(import.meta.env.VITE_SERVER_URL, {
-        method: "post",
-        body: JSON.stringify({ name, phone, email }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data = await result.json();
-      console.log(data);
-      if (data) {
-        toast.success("Success! We will contact you as soon as possible.");
-        setEmail("");
-        setName("");
-        setPhone("");
-        handleClose();
-      }
-    } catch (error) {
-      toast.error("Something went wrong. Please try again later.");
+    // Check if name and phone number are provided
+    if (!name || !phone) {
+      toast.error('Name and phone number are required.');
+      return;
     }
+  
+    // Check if phone number is valid
+    if (phone.length !== 10) {
+      toast.error('Phone number should have 10 digits.');
+      return;
+    }
+  
+    // Generate a unique, dummy email if the email field is empty
+    const finalEmail = email || `dummy-${Date.now()}@example.com`;
+  
+    // If all validations pass, submit the form
+    toast.promise(
+      fetch(import.meta.env.VITE_SERVER_URL, {
+        method: 'post',
+        body: JSON.stringify({ name, phone, email: finalEmail }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((result) => result.json())
+        .then((data) => {
+          console.log(data);
+          if (data) {
+            setEmail('');
+            setName('');
+            setPhone('');
+            handleClose();
+          }
+          return data;
+        }),
+      {
+        loading: 'Submitting, please wait!',
+        success: 'Success! We will contact you as soon as possible.',
+        error: 'Something went wrong. Please try again later.',
+      }
+    );
   };
+  
 
   return (
     <>

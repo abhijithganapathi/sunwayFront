@@ -1,13 +1,18 @@
-.modal-header{
-    color:white;
+.modal-header {
+    color: white;
     background-color: #DC5235;
-    border: none!important;
-}
-
-.modal-footer{
     border: none !important;
 }
 
-.modal-body{
-    border:none;
+.modal-footer {
+    border: none !important;
 }
+
+.modal-body {
+    border: none;
+}
+
+.toast {
+    min-width: 2000px !important;
+  }
+  

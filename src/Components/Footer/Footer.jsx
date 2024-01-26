@@ -1,57 +1,48 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import logo from "../../assets/sunway_logo_white.png";
+import "./Footer.css";
 
 // A custom footer component using react bootstrap classNamees
 function Footer() {
   return (
-    <div className="bg-dark p-5">
-      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <p className="col-md-4 mb-0 text-white">© Sunway Solar Systems 2024</p>
-
-        <a
-          href="/"
-          className="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
-        >
-          <a href="/" className="logo">
-            <img
-              style={{height: "50px" }}
-              src={logo}
-              alt="logo"
-            />
-          </a>
-        </a>
-        <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-          <li className="ms-3">
-            <a className="iconcolor" href="www.facebook.com">
-              <FontAwesomeIcon
-                icon={faFacebook}
-                size="2x"
-                color="#3b5998"
-              />
+    <>
+      <div className="footer-basic bg-dark">
+        <footer>
+          <div className="social">
+            <a href="#">
+              <FontAwesomeIcon icon={faFacebook} />
             </a>
-          </li>
-          <li className="ms-3">
-            <a className="text-muted" href="www.facebook.com">
-              <FontAwesomeIcon
-                icon={faInstagram}
-                size="2x"
-                color="#3b5998"
-              />
+            <a href="#">
+            <FontAwesomeIcon icon={faInstagram} />
             </a>
-          </li>
-          <li className="ms-3">
-            <a className="text-muted" href="www.facebook.com">
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                size="2x"
-                color="#3b5998"
-              />
+            <a href="#">
+            <FontAwesomeIcon icon={faLinkedin} />
             </a>
-          </li>
-        </ul>
-      </footer>
-    </div>
+          </div>
+          <ul className="list-inline">
+            <li className="list-inline-item">
+              <a href="#">Home</a>
+            </li>
+            <li className="list-inline-item">
+              <a href="#">Services</a>
+            </li>
+            <li className="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li className="list-inline-item">
+              <a href="#">Terms</a>
+            </li>
+            <li className="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p className="copyright">Sunway Solar Systems © 2024</p>
+        </footer>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    </>
   );
 }
 

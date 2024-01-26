@@ -44,9 +44,9 @@ function Header() {
                     <li className='nav-item'>
                         <a href='#testimonials' onClick={closeMenu}>Testimonials</a>
                     </li>
-                    <li className='nav-item'>
+                    {/* <li className='nav-item'>
                         <a href='#demo' onClick={closeMenu}><Quote/></a>
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
         </div>
